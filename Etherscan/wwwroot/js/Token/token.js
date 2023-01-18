@@ -51,7 +51,7 @@ function generateChart(data) {
             enabled: false
         },
         tooltip: {
-            pointFormat: '{point.y:5f%}'
+            pointFormat: '{point.y:.5f}%'
         },
         plotOptions: {
             pie: {

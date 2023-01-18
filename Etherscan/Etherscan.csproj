@@ -44,6 +44,7 @@
     <None Remove="Views\Token\Partial\" />
     <None Remove="X.PagedList.Mvc.Core" />
     <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+    <None Remove="EPPlus" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
@@ -53,5 +54,6 @@
     <PackageReference Include="X.PagedList" Version="8.4.3" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+    <PackageReference Include="EPPlus" Version="6.1.1" />
   </ItemGroup>
 </Project>

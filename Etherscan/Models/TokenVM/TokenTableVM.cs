@@ -6,7 +6,7 @@ namespace Etherscan.Models.TokenVM
     {
         #pragma warning disable CS8618 // Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
         public int Rank { get; set; }
-        public decimal TotalSupplyPercent { get; set; }
+        public string TotalSupplyPercent { get; set; }
         public string TotalSuppyStr { get; set; }
     }
 }

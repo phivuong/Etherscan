@@ -19,6 +19,11 @@
 </div>
 <hr />
 <div class="row">
+    <form autocomplete="off" asp-controller="Home" asp-antiforgery="true" asp-action="ExportExcel" method="post">
+        <div class="form-group txtright">
+            <button type="submit" class="btn btn-info">Export to Excel</button>
+        </div>
+    </form>
     <div class="col-12">
         <table class="table">
             <tr>
