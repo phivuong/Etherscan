@@ -7,14 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etherscan", "Etherscan\Ethe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etherscan.Web", "Etherscan.Web", "{8CFF2604-3645-4EB1-9192-B53BF56B87DA}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etherscan.SQLs", "Etherscan.SQLs", "{9D5B4714-D86A-473F-90F6-726803685C66}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etherscan.Business", "Etherscan.Business", "{AF70D3A1-52D0-42F8-A2E8-47299F2EE534}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etherscan.Provider", "Etherscan.Provider", "{9C9FBABE-E1C7-4E97-B846-EC40F7C89D1B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Etherscan.Domain", "Etherscan.Domain", "{893FFC56-EC2E-48B0-97BC-66A2987AA845}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

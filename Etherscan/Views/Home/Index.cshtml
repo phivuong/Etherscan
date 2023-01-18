@@ -1,9 +1,92 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Etherscan.Models.TokenVM
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<TokenTableVM>
+@{
+    ViewData["Title"] = "Token Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<script src="~/js/Token/token.js"></script>
+
+<div class="row">
+    <div class="col-6">
+        <h3 class="txtcenter">Save / Update Token</h3>
+        <div id="createEditToken"></div>
+    </div>
+    <div class="col-6">
+        <h3 class="txtcenter">Token Statistics by Total Supply</h3>
+        <div id="donutChart"></div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <tr>
+                <th>
+                    Rank
+                </th>
+                <th>
+                    Symbol
+                </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Contract Address
+                </th>
+                <th>
+                    Total Holders
+                </th>
+                <th>
+                    Total Supply
+                </th>
+                <th>
+                    Total Supply %
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td class="txtright">
+                        @Html.DisplayFor(modelItem => item.Rank)
+                    </td>
+                    <td class="txtleft">
+                        @Html.ActionLink(item.Symbol, "Detail", "Token", new { id = item.Id })
+                    </td>
+                    <td class="txtleft">
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td class="txtleft">
+                        @Html.DisplayFor(modelItem => item.ContractAddress)
+                    </td>
+                    <td class="txtleft">
+                        @Html.DisplayFor(modelItem => item.TotalHolders)
+                    </td>
+                    <td class="txtleft">
+                        @Html.DisplayFor(modelItem => item.TotalSuppyStr)
+                    </td>
+                    <td class="txtleft">
+                        @Html.DisplayFor(modelItem => item.TotalSupplyPercent)
+                    </td>
+                    <td class="txtcenter">
+                        <button class="link" type="button" onclick="@string.Format("loadEditToken({0})", item.Id)">Edit</button>
+                    </td>
+                </tr>
+            }
+        </table>
+        <div class="showpage">
+            Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @(Model.PageCount) (Show @(Model.PageSize))
+        </div>
+        @Html.PagedListPager(Model, p => Url.Action("Index", new { p }))
+    </div>
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function () {
+        loadCreateToken();
+        loadChart();
+    });
+</script>

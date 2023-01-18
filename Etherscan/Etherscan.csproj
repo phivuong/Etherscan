@@ -6,4 +6,52 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\highchart\" />
+    <Content Remove="wwwroot\lib\highchart\dist\" />
+    <Content Remove="wwwroot\js\Token\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\lib\highchart\" />
+    <Folder Include="wwwroot\lib\highchart\dist\" />
+    <Folder Include="Entities\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Services\" />
+    <Folder Include="Commands\" />
+    <Folder Include="Commands\Token\" />
+    <Folder Include="wwwroot\js\Token\" />
+    <Folder Include="Views\Token\" />
+    <Folder Include="Views\Token\Partial\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Entities\" />
+    <None Remove="Helpers\" />
+    <None Remove="Services\" />
+    <None Remove="Commands\" />
+    <None Remove="Commands\Token\" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="DevExpress.Utils.v13.1" />
+    <None Remove="DevExpress.Web.Mvc.v13.1" />
+    <None Remove="DevExpress.Web.v13.1" />
+    <None Remove="System.Web.Mvc.Extensions" />
+    <None Remove="DevExtreme.AspNet.Data" />
+    <None Remove="PagedList.Mvc" />
+    <None Remove="X.PagedList" />
+    <None Remove="Views\Token\" />
+    <None Remove="Views\Token\Partial\" />
+    <None Remove="X.PagedList.Mvc.Core" />
+    <None Remove="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    <PackageReference Include="X.PagedList" Version="8.4.3" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.0" />
+  </ItemGroup>
 </Project>
