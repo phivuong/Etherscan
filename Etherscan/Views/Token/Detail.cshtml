@@ -1,0 +1,21 @@
+﻿@using Etherscan.Models.TokenVM
+@model TokenDetailVM
+
+<div class="detailbox">
+    <h3>@Html.DisplayFor(modelItem => modelItem.ContractAddress)</h3>
+    <div class="form-group mt5">
+        <label asp-for="Price">Price: <b>$&nbsp;@Html.DisplayFor(modelItem => modelItem.Price)</b></label>
+    </div>
+    <hr />
+    <div class="form-group mt5">
+        <label asp-for="TotalSupplyStr">Total Supply: @Html.DisplayFor(modelItem => modelItem.TotalSupplyStr)&nbsp;@Html.DisplayFor(modelItem => modelItem.Symbol)</label>
+    </div>
+    <hr />
+    <div class="form-group mt5">
+        <label asp-for="TotalHolders">Total Holders: @Html.DisplayFor(modelItem => modelItem.TotalHolders)</label>
+    </div>
+    <hr />
+    <div class="form-group mt5">
+        <label asp-for="Name">Name: @Html.DisplayFor(modelItem => modelItem.Name)</label>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@using Etherscan.Models.TokenVM
+@model TokenCreateUpdateVM
+
+<div>
+    <form id="CreateEditToken" asp-action="Save" method="post" data-ajax="true" data-ajax-update="#CreateEditToken" data-ajax-mode="replace">
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.IsCreateNew)
+        @Html.HiddenFor(m => m.Price)
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group mt5">
+            <label asp-for="Name" class="req">Name</label>
+            <input class="form-control" placeholder="Name" type="text" asp-for="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group mt5">
+            <label asp-for="Symbol" class="req">Symbol</label>
+            <input class="form-control" placeholder="Symbol" type="text" asp-for="Symbol" />
+            <span asp-validation-for="Symbol" class="text-danger"></span>
+        </div>
+        <div class="form-group mt5">
+            <label asp-for="ContractAddress" class="req">Contract Address</label>
+            <input class="form-control" placeholder="Contract Address" type="text" asp-for="ContractAddress" />
+            <span asp-validation-for="ContractAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group mt5">
+            <label asp-for="TotalSupply" class="req">Total Supply</label>
+            <input class="form-control" placeholder="Total Supply" type="text" asp-for="TotalSupply" />
+            <span asp-validation-for="TotalSupply" class="text-danger"></span>
+        </div>
+        <div class="form-group mt5">
+            <label asp-for="TotalHolders" class="req">TotalHolders</label>
+            <input class="form-control" placeholder="Total Holders" type="text" asp-for="TotalHolders" />
+            <span asp-validation-for="TotalHolders" class="text-danger"></span>
+        </div>
+        <div class="form-group mt10 txtright">
+            @if (Model.IsCreateNew)
+            {
+                <button id="btnCreate" class="btn btn-success" type="submit">Create</button>
+            }
+            else
+            {
+                <button id="btnUpdate" class="btn btn-primary" type="submit">Update</button>
+            }
+            <button id="btnReset" class="btn btn-secondary" type="button">Reset</button>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btnReset').on('click', function () {
+            reset();
+        });
+        $('#btnCreate').on('click', function () {
+            setTimeout(function () {
+                location.reload();
+            }, 250);
+        });
+        $('#btnUpdate').on('click', function () {
+            setTimeout(function () {
+                location.reload();
+            }, 250);
+        });
+    });
+</script>
