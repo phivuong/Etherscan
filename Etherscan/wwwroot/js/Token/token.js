@@ -81,6 +81,17 @@ function generateChart(data) {
     });
 }
 
+function checkValid() {
+    var listError = $('.text-danger');
+    var isAllValid = true;
+    for (var i = 0; i < listError.length; i++) {
+        if (listError[i].outerText !== "") {
+            isAllValid = false;
+        }
+    }
+    return isAllValid;
+}
+
 function reset() {
     loadCreateToken();
 }

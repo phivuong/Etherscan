@@ -24,7 +24,6 @@ public class HomeController : Controller
         List<TokenTableVM> tableVMs = GetListTokenData();
         int pageNumber = (p ?? 1);
         var tokensPaging = tableVMs.ToPagedList(pageNumber, PageSize);
-        ModelState.Clear();
         return View(tokensPaging);
     }
 

@@ -42,7 +42,6 @@ namespace Etherscan.Controllers
                     _tokenService.Create(req);
                 else
                     _tokenService.Update(req);
-                ModelState.Clear();
                 return RedirectToAction("Index", "Home");
             }
             return PartialView("Partial/CreateEditToken", model);
